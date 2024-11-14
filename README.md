@@ -1,4 +1,3 @@
-Aqui está o README com a descrição completa e um diagrama de classes em formato Mermaid UML para a sua aplicação de rastreamento de pacotes:
 
 ---
 
@@ -122,4 +121,3 @@ Contribuições são bem-vindas! Sinta-se à vontade para abrir um pull request 
 
 ---
 
-Essa estrutura dá uma visão clara sobre o funcionamento do projeto e fornece o diagrama de classes para facilitar o entendimento da organização do código.
