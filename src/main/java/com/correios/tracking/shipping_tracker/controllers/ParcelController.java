@@ -24,19 +24,16 @@ public class ParcelController {
         return service.saveParcel(parcel);
     }
 
-    // Endpoint para atualizar o status
     @PutMapping("/{trackingNumber}/status")
     public Parcel updateParcelStatus(@PathVariable String trackingNumber, @RequestBody String status) {
         return service.updateParcelStatus(trackingNumber, status);
     }
 
-    // Endpoint para deletar um pacote
     @DeleteMapping("/{trackingNumber}")
     public void deleteParcel(@PathVariable String trackingNumber) {
         service.deleteParcel(trackingNumber);
     }
 
-    // Endpoint para listar todos os pacotes
     @GetMapping
     public List<Parcel> getAllParcels() {
         return service.getAllParcels();
