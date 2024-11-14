@@ -1,24 +1,33 @@
-Shipping Tracker API
+Aqui está o README com a descrição completa e um diagrama de classes em formato Mermaid UML para a sua aplicação de rastreamento de pacotes:
+
+---
+
+# Shipping Tracker API
+
 Shipping Tracker é uma API RESTful desenvolvida em Java com Spring Boot para gerenciar o rastreamento de pacotes. Este projeto simula o funcionamento de um sistema de rastreamento de encomendas, permitindo que os usuários consultem, atualizem e excluam pacotes pelo número de rastreamento, além de listar todos os pacotes cadastrados.
 
-Funcionalidades
-Consultar Pacote pelo Número de Rastreamento: Busca detalhes de um pacote com base no número de rastreamento.
-Cadastrar Novo Pacote: Registra novos pacotes no sistema com status inicial e localização.
-Atualizar Status do Pacote: Permite a atualização do status de entrega.
-Excluir Pacote: Remove pacotes específicos do sistema.
-Listar Todos os Pacotes: Exibe todos os pacotes registrados.
-Tecnologias Utilizadas
-Java 17 e Spring Boot
-JPA/Hibernate para persistência de dados
-SQL Server como banco de dados relacional
-Spring Data JPA para operações CRUD
-Spring REST para construção da API RESTful
-Tratamento de Exceções Personalizadas
-Diagrama de Classes
+## Funcionalidades
+
+- **Consultar Pacote pelo Número de Rastreamento**: Busca detalhes de um pacote com base no número de rastreamento.
+- **Cadastrar Novo Pacote**: Registra novos pacotes no sistema com status inicial e localização.
+- **Atualizar Status do Pacote**: Permite a atualização do status de entrega.
+- **Excluir Pacote**: Remove pacotes específicos do sistema.
+- **Listar Todos os Pacotes**: Exibe todos os pacotes registrados.
+
+## Tecnologias Utilizadas
+
+- **Java 17** e **Spring Boot**
+- **JPA/Hibernate** para persistência de dados
+- **SQL Server** como banco de dados relacional
+- **Spring Data JPA** para operações CRUD
+- **Spring REST** para construção da API RESTful
+- **Tratamento de Exceções Personalizadas**
+
+## Diagrama de Classes
+
 Abaixo está o diagrama de classes representando a estrutura da aplicação. Ele exibe as principais classes e suas relações.
 
-mermaid
-Copiar código
+```mermaid
 classDiagram
     class Parcel {
         Long id
@@ -83,22 +92,34 @@ classDiagram
     GlobalExceptionHandler --> ParcelValidationException
     ParcelService --> TrackingNumberNotFoundException
     ParcelService --> ParcelValidationException
-Endpoints
-GET /api/parcels/{trackingNumber}: Consulta o pacote pelo número de rastreamento.
-POST /api/parcels: Cria um novo pacote.
-PUT /api/parcels/{trackingNumber}/status: Atualiza o status do pacote.
-DELETE /api/parcels/{trackingNumber}: Exclui um pacote.
-GET /api/parcels: Lista todos os pacotes.
-Como Executar o Projeto
-Clone este repositório.
-Configure seu banco de dados SQL Server e ajuste as credenciais no application.properties.
-Compile e execute o projeto usando a IDE de sua preferência ou via terminal com mvn spring-boot:run.
-Tratamento de Exceções
-A API utiliza um controlador global de exceções (GlobalExceptionHandler) que trata:
+```
 
-TrackingNumberNotFoundException: Quando o número de rastreamento não é encontrado.
-ParcelValidationException: Quando há validações incorretas nos dados do pacote.
-Exception: Para capturar erros gerais da aplicação.
-Contribuições
+## Endpoints
+
+- `GET /api/parcels/{trackingNumber}`: Consulta o pacote pelo número de rastreamento.
+- `POST /api/parcels`: Cria um novo pacote.
+- `PUT /api/parcels/{trackingNumber}/status`: Atualiza o status do pacote.
+- `DELETE /api/parcels/{trackingNumber}`: Exclui um pacote.
+- `GET /api/parcels`: Lista todos os pacotes.
+
+## Como Executar o Projeto
+
+1. Clone este repositório.
+2. Configure seu banco de dados SQL Server e ajuste as credenciais no `application.properties`.
+3. Compile e execute o projeto usando a IDE de sua preferência ou via terminal com `mvn spring-boot:run`.
+
+## Tratamento de Exceções
+
+A API utiliza um controlador global de exceções (`GlobalExceptionHandler`) que trata:
+
+- **TrackingNumberNotFoundException**: Quando o número de rastreamento não é encontrado.
+- **ParcelValidationException**: Quando há validações incorretas nos dados do pacote.
+- **Exception**: Para capturar erros gerais da aplicação.
+
+## Contribuições
+
 Contribuições são bem-vindas! Sinta-se à vontade para abrir um pull request ou relatar problemas na seção de Issues.
 
+---
+
+Essa estrutura dá uma visão clara sobre o funcionamento do projeto e fornece o diagrama de classes para facilitar o entendimento da organização do código.
